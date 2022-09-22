@@ -154,3 +154,13 @@ In this section, we will take a look at the below
 #### K8s Reference Docs:
 - https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 - https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/
+
+
+#### Personal Notes
+ReplicationController vs. ReplicaSet
+1. apiVersion
+  ReplicationController: v1
+  ReplicaSet: apps/v1
+2. selector
+ReplicatSet has the selector section because it can manage pods that are not created through ReplicaSet creation. It will take into consideration about the pods that already exist and match the specific labels during creation. The selector is one of the major diference between ReplicaController and ReplicaSet. ReplicationController doesn't require this property but it is an option, while ReplicaSet requires this field to be defined.
+ReplicaSet monitors the pods through selector. Selector can be used as a filter.
