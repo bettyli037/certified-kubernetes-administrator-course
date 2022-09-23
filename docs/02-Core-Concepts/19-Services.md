@@ -90,11 +90,15 @@ In this section we will take a look at **`services`** in kubernetes
       ![srvnp4](../../images/srvnp4.PNG)
      
             
- 1. ClusterIP
+ 2. ClusterIP
     - In this case the service creates a **`Virtual IP`** inside the cluster to enable communication between different services such as a set of frontend servers to a set of backend servers.
+    - ClusterIP exposes the service on a cluster-internal IP. Choosing this values makes the Service only reachable from within the cluster. This is the default  ServiceType
     
- 1. LoadBalancer
+ 3. LoadBalancer
     - Where the service provisions a **`loadbalancer`** for our application in supported cloud providers.
+    - LoadBalancer expose the Service externally using a cloud provider's load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
+
+You can also use ingress to expose your Service. Ingress is not a Service type, but it acts as the entry point for your cluster. it lets you consolidate your routeing rules into a single resource as it can expose multiple services under the same IP address.
     
 K8s Reference Docs:
 - https://kubernetes.io/docs/concepts/services-networking/service/

@@ -37,6 +37,12 @@ Solutions to practice test for namespaces
    ```
    $ kubectl get pods --all-namespaces
    ```
+   or 
+   
+   ```
+   $ kubectl get pods -A
+   ```
+
    </details>
 
 1. Connectivity Test
