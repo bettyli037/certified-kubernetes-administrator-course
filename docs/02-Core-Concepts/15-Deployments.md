@@ -97,12 +97,22 @@ A deployment resource does this automatically without any human interaction and 
 
 Use the following commands
 1. Create an Nginx Pod
-`kubectl run nginx --image=nginx`
+```
+kubectl run nginx --image=nginx
+```
 2. Generate POD Manifest YAML file (-o yaml). Don't create the pod (-dry-run).
-`kubectl run nginx --image=nginx --dry-run=client -o yaml`
+```
+kubectl run nginx --image=nginx --dry-run=client -o yaml
+```
 3. Create a deployment
-`kubectl create deployment --image=nginx nginx`
+```
+kubectl create deployment --image=nginx nginx
+```
 4. Generate Deployment yaml file (-o yaml). Don't create it (-dry-run) with 4 Replicas (-replicas=4)
-`kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml`
+```
+kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
+```
 5. We can specify the -replicas option to create a deployment with 4 replicas.
-`kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`
+```
+kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml
+```

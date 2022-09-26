@@ -52,3 +52,8 @@ Solutions to Practice Test - Manual Scheduling
   ```
   </details>
 
+We can just use this single command `kubectl replace -f nginx.yaml` instead of delete and create.
+
+### Notes
+We cannot move a running pod from one node to another. A pod running on which node is determined on the creation stage.
+
