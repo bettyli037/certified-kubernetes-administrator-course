@@ -84,8 +84,10 @@ Solutions to practice test - rolling updates and rollback
   
   ```
   $ kubectl edit deployment frontend
+  $ kubectl set image --help
+  # Set a deployment's nginx container image to 'nginx:1.9.1', and its busybox container image to 'busybox'
+  $ kubectl set image deployment/nginx busybox=busybox nginx=nginx:1.9.1
   ```
-  
   </details>
   
 - Run the command 'kubectl edit deployment frontend' and modify the required feild

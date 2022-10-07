@@ -89,7 +89,10 @@ In this section, we will talk about "Node Affinity" feature in kubernetes.
 - Planned
   - requiredDuringSchedulingRequiredDuringExecution
   - preferredDuringSchedulingRequiredDuringExecution
-  
+
+Explanation:
+DuringExecution specifies the scenario that the node labels are changed after the pod's creation and the pod is already running on the node. If it is ignored during the execution, then the pod will continue run on the node. If it is required, then the pod will be terminated and the node will repel the pod.
+
   ![nat](../../images/nat.PNG)
   
 ## Node Affinity Types States

@@ -119,6 +119,7 @@ Solutions to the Practice Test - Taints and Tolerations
 
   ```
   $ kubectl get pods
+  $ kubectl get pods --watch
   ```
   </details>
 

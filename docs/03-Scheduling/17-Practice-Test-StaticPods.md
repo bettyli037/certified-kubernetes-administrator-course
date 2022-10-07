@@ -8,8 +8,14 @@ Solutions to the practice test - static pods
 
   ```
   $ kubectl get pods --all-namespaces
+  $ kubectl get pods -A
   ```
   </details>
+
+Notes:
+When we check the ownerReferences of the static pods by looking at the yaml file with -o yaml in the command, we will notice that the kind is Node. That is one way to be sure whether a pod is static pod or not. For other normal pods, the kind of the owner might be ReplicaSet.
+
+We can also use more advanced command like selector and filter to find it out whether the kind of the owner is node or not.
 
 - Which of the below components is NOT deployed as a static pod?
 

@@ -30,7 +30,7 @@ Solutions to practice test - monitor cluster components
   ```
   </details>
     
-- Run the 'kubectl top node' command and wait for a valid output.
+- Run the 'kubectl top node' command and wait for a valid output. A kubectl top is a command used to list all the running nodes and pods along with their resource utilization.
 
   <details>
   
@@ -76,4 +76,4 @@ Solutions to practice test - monitor cluster components
   </details>
   
 
-
+s

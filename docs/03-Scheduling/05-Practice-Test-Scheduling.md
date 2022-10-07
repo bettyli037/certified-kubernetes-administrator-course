@@ -17,8 +17,15 @@ Solutions to Practice Test - Labels and Selectors
 
   ```
   $ kubectl get pods --selector bu=finance
+  $ kubectl get pods --selector bu=finance | wc -l 
+  8
+  $ kubectl get pods --selector bu=finance --no-headers
+  $ kubectl get pods --selector bu=finance --no-headers | wc -l
+  7
   ```
   </details>
+
+
 
 - Run the command 'kubectl get all --selector env=prod'
 

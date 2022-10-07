@@ -11,6 +11,8 @@ In this section we will take a look at Resource Limits
   
 ## Resource Requirements
 - By default, K8s assume that a pod or container within a pod requires **`0.5`** CPU and **`256Mi`** of memory. This is known as the **`Resource Request` for a container**.
+
+- Memory: 0.5 means 500m
   
   ![rr](../../images/rr.PNG)
   
@@ -67,7 +69,34 @@ In this section we will take a look at Resource Limits
   ![rsl1](../../images/rsl1.PNG)
   
 #### Note: Remember Requests and Limits for resources are set per container in the pod.
-  
+ For the POD to pick up those defaults you must have first set those as default values for request and limit by creating a LimitRange in that namespace.
+
+```
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mem-limit-range
+spec:
+  limits:
+  - default:
+      memory: 512Mi
+    defaultRequest:
+      memory: 256Mi
+    type: Container
+```
+```
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-limit-range
+spec:
+  limits:
+  - default:
+      cpu: 1
+    defaultRequest:
+      cpu: 0.5
+    type: Container
+```
 ## Exceed Limits
 - what happens when a pod tries to exceed resources beyond its limits?
 
@@ -77,4 +106,18 @@ In this section we will take a look at Resource Limits
 #### K8s Reference Docs:
 - https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
   
-  
+A quick note on editing PODs and Deployment
+Edit Pods
+Remember, you CANNOT edit specifications of an existing POD other than the below.
+
+spec.containers[*].image
+spec.initContainers[*].image
+spec.activeDeadlineSeconds
+spec.tolerations
+https://kodekloud.com/topic/a-quick-note-on-editing-pods-and-deployments-2/
+
+Edit Deployments
+With Deployments you can easily edit any field/property of the POD template. Since the pod template is a child of the deployment specification,  with every change the deployment will automatically delete and create a new pod with the new changes. So if you are asked to edit a property of a POD part of a deployment you may do that simply by running the command
+```
+kubectl edit deployment my-deployment
+```

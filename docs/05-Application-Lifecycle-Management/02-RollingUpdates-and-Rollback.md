@@ -6,6 +6,7 @@ In this section, we will take a look at rolling updates and rollback in a deploy
 ## Rollout and Versioning in a Deployment
 
   ![rollv](../../images/rollv.PNG)
+  The default setting of Deployment strategy is Rolling Update instead of Recreate.
   
 ## Rollout commands
 - You can see the status of the rollout by the below command

@@ -22,7 +22,7 @@ spec:
 ```
  ![logs-k8s](../../images/logs-k8s.png)
  
-- To view the logs
+- To view the logs. The -f option helps us see the live log trail.
   ```
   $ kubectl logs -f event-simulator-pod
   ```

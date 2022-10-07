@@ -44,6 +44,11 @@ Solutions to practice test env variables
   Update APP_COLOR to green
   $ kubectl create -f green.yaml
   ```
+
+  ```
+  Instead of delete pod and recreate it, another way to update the pod is to use kubectl replace --force -f
+  $ kubectl replace --force -f /tmp/kubectl-edit-3135302771
+  ```
   
   </details>
   

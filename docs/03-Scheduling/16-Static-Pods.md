@@ -14,17 +14,18 @@ In this section, we will take a look at Static Pods
   
 ## Another way to configure static pod 
 - Instead of specifying the option directly in the **`kubelet.service`** file, you could provide a path to another config file using the config option, and define the directory path as staticPodPath in the file.
+- When you use Kube admin to provision a cluster, then you can check the file kubeconfig.yaml.
 
   ![sp1](../../images/sp1.PNG)
 
 ## View the static pods
-- To view the static pods
+- Once these static pods are created in the kubeconfig.yaml, we can view the static pods by this command:
   ```
   $ docker ps
   ```
   ![sp2](../../images/sp2.PNG)
 
-#### The kubelet can create both kinds of pods - the static pods and the ones from the api server at the same time.
+#### The kubelet can create both kinds of pods - the static pods and the ones from the api server at the same time. And the kube-api server is also aware of the static pods that the kubelet created. On the master node, we can list and view the static pods. But we cannot edit or delete the static pods as usual pods. You can only delete the pods from the /etc/kubenetes/manifests folder.
 
   ![sp3](../../images/sp3.PNG)
 

@@ -107,5 +107,9 @@ Solutions to practice test - node affinity
    ```
    </details>
    
+Tips:
+VIM editor
+1. ctrl+V
+2. Shift + .
   
   

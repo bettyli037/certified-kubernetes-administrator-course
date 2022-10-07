@@ -3,7 +3,7 @@
   
 In this section, we will take a look at commands and arguments in docker
 
-- To run a docker container
+- To run a docker container. The ubuntu container will run and exite immediately.
   ```
   $ docker run ubuntu
   ```
